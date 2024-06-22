@@ -8,13 +8,27 @@
     <link rel="stylesheet" href="./assets/CSS/form.css" />
   </head>
   <body>
+    <!-- HEADER WITH TOGGLE FOR LIGHT/DARK MODES -->
     <header>
-      <h1>Hello World</h1>
+      <h1 style="background-color: brown">Toggle</h1>
     </header>
-    <section></section>
+    <!-- LANDING PAGE TITLE ELEMENT -->
+    <section style="background-color: blueviolet">
+      <p style="background-color: #60d8cd">My First Blog</p>
+    </section>
     <section>
-      <a href=""></a>Submit
-      </button>
+      <h2>What's on your mind?</h2>
+      <!-- FORM TO ADD BLOG POSTS -->
+      <form style="background-color: aqua" action="">
+        <label for="u-name">Username:</label><br />
+        <input type="text" id="u-name" name="u-name" /><br />
+        <label for="title">Title:</label><br />
+        <input type="text" id="title" name="Title" /><br />
+        <label for="content">Content</label><br />
+        <textarea name="content" id="content" rows="4" cols="80"></textarea
+        ><br />
+        <input type="submit" value="submit" />
+      </form>
     </section>
     <script src="./assets/JS/form.js"></script>
     <script src="./assets/JS/logic.js"></script>
