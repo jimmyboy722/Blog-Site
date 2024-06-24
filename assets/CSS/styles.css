@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  transition: background-color ease-in-out 0.5sec;
 }
 
 html {
@@ -32,4 +33,8 @@ pre,
 code {
   font-size: 100%;
   font-family: inherit;
+}
+
+ul {
+  list-style: none;
 }

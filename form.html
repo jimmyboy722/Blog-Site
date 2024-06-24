@@ -15,23 +15,25 @@
       </button>
     </header>
     <!-- LANDING PAGE TITLE ELEMENT -->
-    <section class="blog-title">
-      <p style="background-color: #60d8cd">My First Blog</p>
-    </section>
-    <section class="blog-form">
-      <h2>What's on your mind?</h2>
-      <!-- FORM TO ADD BLOG POSTS -->
-      <form id="blogPosts" style="background-color: aqua" action="">
-        <label for="u-name">Username:</label><br />
-        <input type="text" id="u-name" name="u-name" /><br />
-        <label for="title">Title:</label><br />
-        <input type="text" id="title" name="Title" /><br />
-        <label for="content">Content</label><br />
-        <textarea name="content" id="content" rows="4" cols="80"></textarea
-        ><br />
-        <input id="submitBtn" type="submit" value="submit" />
-      </form>
-    </section>
+    <main id="main-section">
+      <section id="leftMain">
+        <p id="blog-title">My First Blog</p>
+      </section>
+      <section id="rightMain">
+        <h2>What's on your mind?</h2>
+        <!-- FORM TO ADD BLOG POSTS -->
+        <form id="blogPosts">
+          <label for="u-name">Username:</label><br />
+          <input type="text" id="u-name" name="u-name" /><br />
+          <label for="title">Title:</label><br />
+          <input type="text" id="title" name="Title" /><br />
+          <label for="content">Content</label><br />
+          <textarea name="content" id="content" rows="4" cols="80"></textarea
+          ><br />
+          <input id="submitBtn" type="submit" value="submit" />
+        </form>
+      </section>
+    </main>
     <!-- LINKS TO SCRIPTS FOR JS AND ICONS -->
     <script
       src="https://kit.fontawesome.com/fce10d8f7d.js"

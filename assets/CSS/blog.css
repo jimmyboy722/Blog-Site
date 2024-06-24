@@ -1,0 +1,42 @@
+header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  height: 80px;
+  align-items: center;
+  border-bottom: 10px;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-style: double;
+}
+
+footer {
+  display: flex;
+  flex-flow: row wrap;
+  height: 80xp;
+  border-top: 10px;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
+  border-style: double;
+}
+
+#signature {
+  flex-basis: 100%;
+  align-items: center;
+  align-content: flex-start;
+  align-content: stretch;
+  text-align: center;
+}
+
+ul,
+li,
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
+  color: #ff0000;
+}
