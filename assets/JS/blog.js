@@ -1,39 +1,43 @@
-const blogContainer = document.getElementById("blogContainer");
-const submitBtn = document.getElementById("submitBtn");
+const mainSec = document.getElementById("blogContainer");
 
-// for (let i = 0; i < dataFromLS.length; i++) {
-//   const element = dataFromLS[i];
+// THE FOLLOWING REUSABLE FUNCTION CREATES AND ADDS NEW ELEMENTS TO THE DOM AND ALSO SETS THE TEXT CONTENT
+const makePosts = function (text, type, parent) {
+  const tag = document.createElement(type);
+  tag.textContent = text;
+  parent.appendChild(tag);
 
-//   const titleDiv = document.createElement("div");
-//   titleDiv.innerText = element.title;
-//   blogsContainer.append(titleDiv);
+  return tag;
+};
 
-//   console.log(element);
-//   //   write code to display them
-// }
+// FOR WHEN THERE ARE NO POSTS TO DISPLAY, CREATION OF ELEMENT TO SAY SO AND ANCHOR TO MAKE BLOG POST
+const noPosts = function () {
+  buildElement("h2", "No Blog posts yet...", mainSec);
+  const a = buildElement("a", "Post your blog here!", mainSec);
 
-const dataFromLS = JSON.parse(localStorage.getItem("posts"));
+  a.href = "";
+};
+// FUNCTION MADE TO GET THE DATA FROM LOCAL STORAGE AND ASSIGN TO THE VARIABLE "BLOGS"
+const createBlogList = function () {
+  const blogs = readLocalStorage();
+  // CHECKS IF "BLOGS" ARRAY IS EMPTY AND IF SO, "HANDLE-EMPTY" FUNCTION EXITS
+  if (!blogs.length) {
+    noPosts();
 
-if (!dataFromLS) {
-  localStorage.setItem("posts", JSON.stringify([]));
-}
+    //RETURN USED TO END FUNCTION
+    return;
+  }
 
-// on submit of the form
+  // FOR OF LOOP FOR ARRAY OF OBJECTS(BLOGS)
+  for (let blog of blogs) {
+    const article = createBlogList("article", null, mainSec);
 
-function submitFormData() {
-  // collect data from form
-  // make sure you build an object with the form data
-  const data = {
-    title: "test0",
-    username: "test username",
-    content: "test content",
-  };
+    buildElement("h2", blog.title, article);
+    buildElement("blockquote", blog.content, article);
+    buildElement("p", `Posted by: ${blog.username}`, article);
 
-  const posts = JSON.parse(localStorage.getItem("posts"));
+    article.classList.add("card");
+  }
+};
 
-  posts.push(data);
-
-  localStorage.setItem("posts", JSON.stringify(posts));
-}
-
-submitBtn.addEventListener("click", submitFormData);
+// RUNNING THE PREVIOUSLY MADE FUNCTION
+createBlogList();

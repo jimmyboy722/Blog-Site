@@ -1,11 +1,27 @@
-// SELECTING FIRST FORM ELEMENT IN FORM.HTML
-const form = document.querySelector("form");
+// SELECTING THE FORM ELEMENT IN FORM.HTML
+const formEl = document.getElementById("blogPosts");
+// CREATED FUNCTION TO PREVENT INVALID DATA FROM BEING POSTED TO A BLOG
+const formSubmission = function(event)    
+event.preventDefault();
+    // VARIABLES FOR ITEMS IN FORM.HTML FILE
+    const blogs = document.getElementById("content").value.trim();
+    const username = document.getElementById("u-name").value.trim();
+    const title = document.getElementById("title").value.trim();
 
-const blogPosting = function () {};
-// VARIABLES FOR ITEMS IN FORM.HTML FILE
-const blogPosts = document.getElementById("blogPosts").value.trim();
-const username = document.getElementById("u-name").value.trim();
-const title = document.getElementById("title").value.trim();
-const submitBtn = document
-  .getElementById("submit")
-  .addEventListener("click", function () {});
+// STATE IN WHICH ERROR MESSAGE WOULD OCCOR
+    if (!username || !title || !blogs) {
+      const errorMessage = document.getElementById("error-message");
+      errorMessage.textContent = "Valid Input Needed.";
+
+      return;
+    }
+
+ const formData = {
+  username: username,
+  title: title,
+  content: blogs,
+ };
+
+ storeLocalStorage(formData);
+ redirectPage
+// more for receiving and storing data
